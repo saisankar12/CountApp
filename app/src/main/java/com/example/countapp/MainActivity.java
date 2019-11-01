@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState != null) {
             String s = savedInstanceState.getString("number");
             if (tv!=null){
-                tv.setText(s);
+                tv.setText(s); 
             }
         }
         b1.setOnClickListener(new View.OnClickListener() {

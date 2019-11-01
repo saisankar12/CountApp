@@ -25,9 +25,20 @@ public class MainActivity extends AppCompatActivity {
                 tv.setText(""+a);
             }
         });
+
+        if (savedInstanceState!=null){
+            tv.setText(a);
+        }
     }
     public void toast(View view) {
         Toast.makeText(this, "Android",
                 Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putInt("number",a);
     }
 }

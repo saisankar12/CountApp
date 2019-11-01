@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         b1 = findViewById(R.id.count_inc);
         tv = findViewById(R.id.text_count);
-
         if (savedInstanceState != null) {
             String s = savedInstanceState.getString("number");
             if (tv!=null){
@@ -29,25 +28,19 @@ public class MainActivity extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 a++;
                 tv.setText("" + a);
             }
         });
     }
-
     public void toast(View view) {
-        Toast.makeText(this, "Android",
-                Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Android", Toast.LENGTH_SHORT).show();
     }
-
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-
         outState.putString("number", String.valueOf(tv.getText()));
     }
-
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);

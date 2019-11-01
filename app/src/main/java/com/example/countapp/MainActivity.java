@@ -18,16 +18,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         b1=findViewById(R.id.count_inc);
         tv=findViewById(R.id.text_count);
-        b1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                a++;
-                tv.setText(""+a);
-            }
-        });
 
         if (savedInstanceState!=null){
-            tv.setText(a);
+            String s=savedInstanceState.getString("number");
+            tv.setText(s);
+        }else {
+            b1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    a++;
+                    tv.setText(""+a);
+                }
+            });
+
         }
     }
     public void toast(View view) {
@@ -39,6 +42,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
 
-        outState.putInt("number",a);
+        outState.putString("number",tv.getText().toString());
     }
 }

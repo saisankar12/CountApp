@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="10dp"
     tools:context=".MainActivity">
 
     <Button
@@ -22,7 +23,7 @@
         android:layout_weight="0.8"
         android:text="0"
         android:textColor="#3F51B5"
-        android:background="#132FD1"
+        android:background="#FFEB3B"
         android:gravity="center"
         android:textSize="100dp"
         android:id="@+id/text_count"/>
